@@ -15,6 +15,21 @@
       width:100%;
   }
 }
+        .namestyle{
+            color:White;
+            width: 0ch;
+            animation: text 6s steps(19) infinite alternate;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+        @keyframes text {
+            0%{
+                width: 0ch;
+            }
+            50%{
+                width: 19ch;
+            }
+        }
     </style>
 </head>
 <body>
@@ -48,7 +63,7 @@
     
       </div>
       <div  class="bio">
-         <center> <span> I'm Abhijit Mali</span> </center>
+          <center> <span> <h1 class="namestyle" > This Is Abhijit Mali </h1> </span> </center>
           <br>
           <br>
 <br>
@@ -239,34 +254,7 @@
         <!--
                 contact form 
             -->
-        <div >
-          <center style="font-family: cursive;color:deeppink"> <h1 style="padding-top: 100px;padding-bottom: 0%;"> CONTACT ME </h1></center>
         
-        <div  class="contact" id="contact" >
-            
-            <div >
-                <form action="#home">
-                 <label>Enter Name: </label>
-                  <input value="name" placeholder="Name">
-                  <span> <br> </span><br>
-                  <label>Enter Your E-mail</label>
-                  <input type="email" name="email" id="email" placeholder="Email " required><br>
-                  <span> <br> </span>
-                  <label for="message">Write Message Here : </label><br>
-            
-
-                  <textarea id="message" rows="17" cols="90" > Say Something !!</textarea>
-                  <br>
-                  <br>
-
-                  <button  onclick="alert(' MESSGE SENT !!' )" >
-                      Send 
-                  </button>
-
-                </form>
-            </div>
-        </div>
-        </div>
         <footer class="footer">
              
                 <h5> Copyright @ abhijit mali </h5>
