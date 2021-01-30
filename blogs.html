@@ -14,11 +14,12 @@
             <section >
                     <h1 class="title t-text"> Broken Access Control Leads To Information Disclosure </h1>
             </section>
+            <br>
             <p class="part-one font">
                 Hello Fellow Bug Bounty Hunters And security Researchers .
-                <br>This Is Abhii Mali A N008 Bug Bounty Hunter From India .
+                <br>This Is Abhii Mali  a  N008 Bug Bounty Hunter From India .
 
-                This Is My First Write Up About A Vulnerability Which I Found In Private Programme (Can't Disclose Name
+                This Is My First Write Up About A Vulnerability Which I Found In Private Programe (Can't Disclose Name
                 Of Programe so call it as example.com ) so Enjoy The Finding And If You Think I Did Any Mistake Please
                 Forgive Me And Give Me Suggestion Via <a href="https://www.instagram.com/abhii_mali/">Insta </a> And <a
                     href="https://twitter.com/Abhii_Mali">
@@ -30,7 +31,7 @@
                 <br>
                 <br>
                 Let's Discuss About Logic/Working Of Application !
-                <br>
+                <br><br>
                 It Is Well Known Web Application For Travel Professionals or Businesses To Arrange Trips And Share Trips
                 Information With Customers Or Team Members . It Has Admin User (Trip Organizer) And Team Member (Normal
                 User) Functionality. When Admin Add An User As Team Member (Let Call It As User 2 ) In The Application,
@@ -44,26 +45,28 @@
                 Here, Id parameter Is <b> Trip ID </b> Which Is Always Same For A particular Trip And In Response URL Path Of PDF
                 Is Shown . Vulnerability Was Lies Here .
                 <br>
-                <b> Steps To Reproduce The Vulnerability : </b><br>
-                1. Admin add An User As Team Member , All The Trip Information Is Shared With User 2<br>
+                <br>
+                <b> Steps To Reproduce The Vulnerability : </b><br><br>
+                1. Admin add An User As Team Member , All The Trip Information Is Shared With User 2<br><br>
                 2. User generate PDF Of Trip And Capture The Request In Burp Suite<br>
                 3. Now Admin Removed User 2 From Team Then User 2 Does Not Have Access To The Trip Information But The
                 User 2 Have ID Of Trip So He/She Can Generate PDF Using That ID Anytime With The Help Of Request Which
-                We Kept In Burp Repeater.<br>
+                We Kept In Burp Repeater.<br><br>
                 4. Whenever Admin Do Any Changes In Trip Like Location Date Time Price And Then If User 2 Generate PDF
                 Using The Vulnerable Endpoint, New PDF Will Generate Each Time With Updated Information i.e Updated Date
-                Time Location<br>
+                Time Location<br><br>
             </p>
             <p class="part-three font">
                 <br>
                 In-Short :)
                     <br>
-                Generate PDF Endpoint Is Vulnerable To IDOR But Attacker Can Only Get ID Of Trip If He/She Previous
+                Generate PDF Endpoint Is Vulnerable To IDOR But Attacker Can Only Get ID Of Trip If He/She Was Previous
                 Member Of Trip .
 
                 <br>
-                I Tried My Best To Explain The Issue But Still You Are In Doubt You Can Ask Me Doubts Any Time Via
-                Twitter And Insta.
+                <br>
+                I Tried My Best To Explain The Issue But Still If You Are In Doubt You Can Ask Me Doubts Any Time Via
+                Twitter And Insta. <br>
                 Hope You Enjoyed This Finding !!!
                 <br>
             <pre style="padding-top: 10px;padding-bottom: 10px;">
