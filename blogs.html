@@ -6,11 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tech Blog</title>
     <link rel="stylesheet" href="/assets/css/blogStyle.css">
+    <script>
+        function myFunction() {
+           var element = document.body;
+           element.classList.toggle("dark-mode");
+          
+        }
+        </script>
 </head>
 
 <body>
     <div class="main-div">
         <div class="writeup">
+            <input type="button" class="btn" value=" Toggle View " onclick="myFunction()" >
             <section >
                     <h1 class="title t-text"> Broken Access Control Leads To Information Disclosure </h1>
             </section>
