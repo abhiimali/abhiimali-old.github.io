@@ -11,6 +11,18 @@ body
     background-color: white;
     overflow-x: hidden
 }
+.dark-mode {
+    background-color: black;
+    color: white;
+  }
+
+  .btn
+  {
+      border-radius: 12px;
+      padding:1px 10px;
+      float: center;
+      background-color: aqua;
+  }
 html, body {
     max-width: 100%;
     overflow-x: hidden;
