@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Blog</title>
+    <link rel="stylesheet" href="/assets/css/blogStyle.css">
+</head>
+
+<body>
+    <div class="main-div">
+        <div class="writeup">
+            <section >
+                    <h1 class="title t-text"> Broken Access Control Leads To Information Disclosure </h1>
+            </section>
+            <p class="part-one font">
+                Hello Fellow Bug Bounty Hunters And security Researchers .
+                <br>This Is Abhii Mali A N008 Bug Bounty Hunter From India .
+
+                This Is My First Write Up About A Vulnerability Which I Found In Private Programme (Can't Disclose Name
+                Of Programe so call it as example.com ) so Enjoy The Finding And If You Think I Did Any Mistake Please
+                Forgive Me And Give Me Suggestion Via <a href="https://www.instagram.com/abhii_mali/">Insta </a> And <a
+                    href="https://twitter.com/Abhii_Mali">
+                    Twitter</a> @Abhii_Mali
+                <br>
+                <br>
+                Vulnerability Type : 
+                <br>Business Logic Flaws / Broken Access Control
+                <br>
+                <br>
+                Let's Discuss About Logic/Working Of Application !
+                <br>
+                It Is Well Known Web Application For Travel Professionals or Businesses To Arrange Trips And Share Trips
+                Information With Customers Or Team Members . It Has Admin User (Trip Organizer) And Team Member (Normal
+                User) Functionality. When Admin Add An User As Team Member (Let Call It As User 2 ) In The Application,
+                All The Trips Info Is Shared With User 2. Now User 2 Can See The Trip Information and Other Basic
+                Details Such As Trip Duration Location etc . User 2 Also Have Functionality To Make PDF Of Trip
+                Information [ ease For Offline Usage ].
+            </p>
+            <!-- <img src="/assests/assets/img/write.jpg"  alt="POC Screenshot"> -->
+            <img src="/assets/img/write.jpg" alt="POC Screenshot" class="poc-img">
+            <p class="part-two font">
+                Here Id parameter Is Trip ID Which Is Always Same For A particular Trip And In Response URL Path Of PDF
+                Is Shown . Vulnerability Was Lies Here .
+
+                Steps To Reproduce The Vulnerability :
+
+                1. Admin add An User As Team Member , All The Trip Information Is Shared With User 2
+                2. User generate PDF Of Trip And Capture The Request In Burp Suite
+                3. Now Admin Removed User 2 From Team Then User 2 Does Not Have Access To The Trip Information But The
+                User 2 Have ID Of Trip So He/She Can Generate PDF Using That ID Anytime With The Help Of Request Which
+                We Kept In Burp Repeater.
+                4. Whenever Admin Do Any Changes In Trip Like Location Date Time Price And Then If User 2 Generate PDF
+                Using The Vulnerable Endpoint, New PDF Will Generate Each Time With Updated Information i.e Updated Date
+                Time Location
+            </p>
+            <p class="part-three font">
+                <br>
+                In-Short :)
+
+                Generate PDF Endpoint Is Vulnerable To IDOR But Attacker Can Only Get ID Of Trip If He/She Previous
+                Member Of Trip .
+
+
+                I Tried My Best To Explain The Issue But Still You Are In Doubt You Can Ask Me Doubts Any Time Via
+                Twitter And Insta.
+                Hope You Enjoyed This Finding !!!
+                <br>
+            <pre style="padding-top: 10px;padding-bottom: 10px;">
+13/11/2020      Reported
+14/11/2020      Initial Response
+16/11/2020      Considered It As Low Severity 
+                And Rewarded $$$
+
+</pre>
+            Thank You !
+
+            <br>
+            <br>
+            ~Abhii Mali (@Abhii_Mali) !!!
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>
