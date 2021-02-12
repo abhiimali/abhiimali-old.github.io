@@ -17,16 +17,15 @@
  
             function UpdateNotice() {
                 if (document.cookie != "") {
-                    var Today = new Date                                                // declare 
-
-                    var CookiePrevVisit =  document.cookie.split('=')[1]
-
-                    var PreviousVisit =  new Date(CookiePrevVisit)
-
-                    if (Today.getTime() >
-                        PreviousVisit.getTime()) {
+                    var Today = new Date
+                    var CookiePrevVisit =
+                        document.cookie.split('=')[1]
+                    var PreviousVisit =
+                        new Date(CookiePrevVisit)
+                    if (Today.getTime() > PreviousVisit.getTime()) 
+                    {
                         alert('Welcome back')
-                     }
+ }
                 }
                 else {
                     alert('No cookies')
@@ -34,14 +33,31 @@
                 }
             }
 
+            function WriteCookie()
+            {    var x = new Date("2015-02-02"); 
+                 with(document.CookieWriter)
+                 {
+                document.cookie = "date"+"="+x +";" ;
+                // alert(x);
+            }
+            }
+
         
     </script>
 </head>
 
-<body >
+<body  onload="WriteCookie()">
+
+    <!-- <form name="CookieeWriter" action="" >
+        
+        <input type="button" name="button" value="btn"
+        onclick="WriteCookie()"/>
+    </FORM> -->
+       
     <form name="CookieWriter" action="">
         <INPUT name="Reset" value="New Visit" type="button" onclick="UpdateNotice()" />
     </FORM>
+
 </body>
 
 </html>
