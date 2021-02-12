@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personalizing cookie </title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<head>
+    <title>New Features</title>
+    <script language="Javascript" type="text/javascript">
+ 
+            function UpdateNotice() {
+                if (document.cookie != "") {
+                    var Today = new Date                                                // declare 
+
+                    var CookiePrevVisit =  document.cookie.split('=')[1]
+
+                    var PreviousVisit =  new Date(CookiePrevVisit)
+
+                    if (Today.getTime() >
+                        PreviousVisit.getTime()) {
+                        alert('Welcome back')
+                     }
+                }
+                else {
+                    alert('No cookies')
+                    
+                }
+            }
+
+        
+    </script>
+</head>
+
+<body >
+    <form name="CookieWriter" action="">
+        <INPUT name="Reset" value="New Visit" type="button" onclick="UpdateNotice()" />
+    </FORM>
+</body>
+
+</html>
